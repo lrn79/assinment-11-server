@@ -34,7 +34,7 @@ async function run() {
             const cursor = productCollection.find(query);
             const items = await cursor.toArray();
             res.send(items);
-            // ALL ITEM LINK : http://localhost:5000/allitem
+            // ALL ITEMS LINK : http://localhost:5000/allitem
             // server link https://salty-everglades-57172.herokuapp.com/allitem
         });
 
