@@ -8,7 +8,12 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // use middleware
-app.use(cors());
+const corsConfig = {
+    origin: true,
+    credentials: true,
+}
+app.use(cors(corsConfig))
+app.options('*', cors(corsConfig))
 app.use(express.json());
 
 // main Work
@@ -64,6 +69,14 @@ async function run() {
             const result = await productCollection.insertOne(newitem);
             res.send(result)
         });
+        // For My Item
+        app.get('/myitems', async (req, res) => {
+            const email = req.query.email;
+            const query = { email: email };
+            const cursor = productCollection.find(query);
+            const items = await cursor.toArray();
+            res.send(items);
+        })
         // delete Item
 
         app.delete("/deleteQuantity/:id", async (req, res) => {
