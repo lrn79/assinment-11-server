@@ -16,7 +16,7 @@ app.use(cors(corsConfig))
 app.options('*', cors(corsConfig))
 app.use(express.json());
 
-// main Work
+// main Works
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.27urz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
@@ -103,5 +103,3 @@ app.listen(port, () => {
     console.log('CRUD Server is running');
 })
 
-// username:wareHouse
-// pass : wqU1koZroQFBlXwK
