@@ -35,10 +35,11 @@ async function run() {
             const items = await cursor.toArray();
             res.send(items);
             // ALL ITEM LINK : http://localhost:5000/allitem
+            // server link https://salty-everglades-57172.herokuapp.com/allitem
         });
 
         // Get Per product data
-        // 62757600ce55dffbc8f6e88f
+
         app.get('/stokeupdate/:id', async (req, res) => {
             const id = req.params.id;
             console.log(id);
