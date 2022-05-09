@@ -38,7 +38,7 @@ async function run() {
             // server link https://salty-everglades-57172.herokuapp.com/allitem
         });
 
-        // Get Per product data
+        // Get Per item data
 
         app.get('/stokeupdate/:id', async (req, res) => {
             const id = req.params.id;
